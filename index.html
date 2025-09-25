@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Оформление заказа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключаем Telegram Web App API -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    label { display: block; margin-top: 1rem; }
+    input, textarea { width: 100%; padding: .5rem; font-size: 1rem; }
+    button { margin-top: 1.5rem; padding: .75rem 1.5rem; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Новая заявка</h1>
+  <form id="order-form">
+    <label>
+      Что необходимо сделать?
+      <textarea id="task" rows="2" required></textarea>
+    </label>
+    <label>
+      Адрес:
+      <input type="text" id="address" required>
+    </label>
+    <label>
+      Желаемая дата выполнения:
+      <input type="date" id="date" required>
+    </label>
+    <!-- Для простоты пока собираем фото ссылками или пропускаем -->
+    <label>
+      Фото (ссылки через запятую) — опционально:
+      <textarea id="photos" rows="2"></textarea>
+    </label>
+    <label>
+      Ваше имя:
+      <input type="text" id="name" required>
+    </label>
+    <label>
+      Телефон:
+      <input type="tel" id="phone" required>
+    </label>
+    <button type="button" id="submit-btn">Отправить заявку</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
